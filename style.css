@@ -1,0 +1,990 @@
+:root {
+    --bg: rgb(27,27,32);
+    --text: rgb(225,225,242);
+    --padding: 15px;
+}
+
+@font-face {
+    font-family: "PP Neue Machina";
+    src: url('./PPNeueMachina-Variable.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(https://use.typekit.net/jbf5ilc.css);
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    overscroll-behavior: none;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#wrapper {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#content {
+    overflow: visible;
+    width: 100%;
+}
+
+.text {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    font-family: Degular, semibold;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 15rem;
+    text-align: center;
+    z-index: -2;
+    color: var(--text);
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: var(--text);
+    width: auto;
+    transform: translate(-50%, -50%) !important;
+    margin: 0;
+    padding: 0;
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
+  z-index: 2;
+}
+
+
+.filter-text {
+  mix-blend-mode: screen;
+  color: #5987ff;
+  z-index: 2;
+}
+
+.images {
+  padding-top: 85vh;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 150vh;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(20, 2%);
+  grid-template-rows: repeat(30, 3%);
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.content__slide-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+img:nth-child(1) {
+  grid-area: 1/1/6/8;
+}
+
+img:nth-child(2) {
+  grid-area: 3/12/8/20;
+}
+
+img:nth-child(3) {
+  grid-area: 9/5/13/15;
+}
+
+img:nth-child(4) {
+  grid-area: 14/1/18/8;
+}
+
+img:nth-child(5) {
+  grid-area: 16/12/20/19;
+}
+
+img:nth-child(6) {
+  grid-area: 20/2/25/9;
+}
+
+img:nth-child(7) {
+  grid-area: 22/11/24/20;
+}
+
+img:nth-child(8) {
+  grid-area: 26/5/30/15;
+}
+
+.nav-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 1001;
+    background: #0000ff;
+    border: 0px solid;
+    cursor: pointer;
+}
+
+.nav-lineone, .nav-linetwo {
+    width: 30px;
+    height: 7px;
+    background: var(--bg);
+    position: absolute;
+}
+
+.nav-linetwo {
+    transform: rotateZ(90deg);
+}
+
+.nav-panel {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 180px;
+    height: auto;
+    padding: 24px;
+    background: #0000ff;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transform-origin: top right;
+}
+
+.nav-item {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--bg);
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: "PP Neue Machina", sans-serif;
+}
+
+.nav-close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 20px;
+    font-weight: normal;
+    line-height: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+#wrapper {
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#content {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.title {
+    font-family: Degular, semibold;
+    color: var(--text);
+    font-size: 15rem;
+    margin: 0;
+    line-height: 1;
+}
+
+.nombre {
+    font-family: PP Neue Machina, sans-serif;
+    font-size: 4rem;
+    color: var(--text);
+}
+
+.content-bottom {
+    position: relative;
+    width: 100%;
+    background-color: var(--bg);
+    padding: 80px 40px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.bio-projects-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bio-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bio-section h1 {
+    font-family: PP Neue Machina, sans-serif;
+    font-size: 6rem;
+    color: #5987ff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+}
+
+.bio-section p {
+    font-family: 'PP Neue Machina', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 65px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.project-item h3 {
+    font-family: PP Neue Machina, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-meta {
+    font-family: 'PP neue Machina', sans-serif;
+    font-size: 0.8rem;
+    color: #888;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+}
+
+.project-description {
+    font-family: 'PP neue Machina', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .bio-projects-wrapper {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .bio-section h2 {
+        font-size: 2rem;
+    }
+    
+    .content-bottom {
+        padding: 60px 20px;
+    }
+}
+
+/* Selected Works Section */
+.selected-work {
+    width: 100%;
+    background-color: var(--bg);
+    padding: 0;
+}
+
+.selected-work-header {
+    width: 100%;
+    margin: 0;
+    max-width: none;
+}
+
+.selected-work-header h2 {
+    font-family: PP Neue Machina, sans-serif;
+    font-size: 3rem;
+    color: var(--text);
+    background-color: #0000ff;
+    padding: 20px 40px;
+    margin: 0 0 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.work1-closed, .work2-closed, .work3-closed, .work4-closed {
+    position: relative;
+    margin-bottom: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.work1-closed img, .work2-closed img, .work3-closed img, .work4-closed img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.work1-tag, .work2-tag, .work3-tag, .work4-tag {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+.work1-tag p, .work2-tag p, .work3-tag p, .work4-tag p {
+    color: var(--text);
+    margin: 0;
+    font-family: PP Neue Machina, sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.work1-tag a, .work2-tag a, .work3-tag a, .work4-tag a {
+    color: #0000ff;
+    text-decoration: none;
+    font-family: PP Neue Machina, Plain Bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 900;
+    text-shadow: 0.5px 0.5px 0 #0000ff;
+    transition: all 0.3s ease;
+}
+
+.work1-tag a:hover, .work2-tag a:hover, .work3-tag a:hover, .work4-tag a:hover {
+    color: var(--text);
+}
+
+.archive {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    gap: 0;
+    margin-top: 0;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+}
+
+.archive-item {
+    position: relative;
+    overflow: visible;
+}
+
+.archive-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.archive-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Archive image positioning - matching reference layout with different sizes */
+.archive-item-1 {
+    grid-area: 2 / 2 / 15 / 8;
+}
+
+.archive-item-2 {
+    grid-area: 12 / 6 / 20 / 13;
+}
+
+.archive-item-3 {
+    grid-area: 11 / 14 / 2 / 10;
+}
+
+.archive-item-4 {
+    grid-area: 4 / 21 / 15 / 15;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 40px 20px;
+}
+
+.modal.active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--bg);
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 2001;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #0000ff;
+    transform: scale(1.2);
+}
+
+.modal-body {
+    padding: 60px 40px;
+}
+
+.modal-body h2 {
+    font-family: PP Neue Machina, sans-serif;
+    font-size: 3rem;
+    color: var(--text);
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.modal-meta {
+    font-family: PP Neue Machina, sans-serif;
+    font-size: 0.9rem;
+    color: #888;
+    margin: 0 0 40px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.modal-gallery {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.modal-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.modal-description {
+    font-family: PP Neue Machina, sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.8;
+    max-width: 800px;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+}
+
+.modal-body img[src*="petacas"] {
+    width: 80%;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Contact Section */
+.contact-section {
+    width: 100%;
+    background-color: var(--bg);
+    padding: 80px 40px;
+    min-height: 100vh;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-content h2 {
+    font-family: PP Neue Machina, sans-serif;
+    font-size: 6rem;
+    color: var(--text);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+}
+
+.contact-content p {
+    font-family: 'PP Neue Machina', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+}
+
+.contact-content a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-content a:hover {
+    color: #5987ff;
+}
+
+.contact-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #d0d0d0;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 4rem;
+        -webkit-text-stroke-width: 0.8px;
+    }
+
+    .images {
+        padding-top: 40vh;
+        min-height: 100vh;
+        grid-template-columns: repeat(10, 10%);
+        grid-template-rows: repeat(15, 6.7%);
+    }
+
+    img:nth-child(1) {
+        grid-area: 1/1/4/6;
+    }
+
+    img:nth-child(2) {
+        grid-area: 1/6/4/11;
+    }
+
+    img:nth-child(3) {
+        grid-area: 4/3/7/9;
+    }
+
+    img:nth-child(4) {
+        grid-area: 7/1/10/6;
+    }
+
+    img:nth-child(5) {
+        grid-area: 7/6/11/11;
+    }
+
+    img:nth-child(6) {
+        grid-area: 11/1/14/6;
+    }
+
+    img:nth-child(7) {
+        grid-area: 11/6/14/11;
+    }
+
+    img:nth-child(8) {
+        grid-area: 14/3/16/9;
+    }
+
+    .bio-projects-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .bio-section h1 {
+        font-size: 2rem;
+    }
+
+    .bio-section p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+    
+    .content-bottom {
+        padding: 40px 20px;
+        min-height: auto;
+    }
+
+    .projects-grid {
+        gap: 40px;
+    }
+
+    .project-item h3 {
+        font-size: 0.9rem;
+    }
+
+    .project-meta {
+        font-size: 0.7rem;
+    }
+
+    .project-description {
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+    
+    .selected-work-header h2 {
+        font-size: 1.5rem;
+        padding: 15px 20px;
+    }
+    
+    .work1-closed, .work2-closed, .work3-closed, .work4-closed {
+        margin-bottom: 20px;
+    }
+
+    .work1-tag, .work2-tag, .work3-tag, .work4-tag {
+        flex-direction: column;
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 12px;
+    }
+
+    .work1-tag p, .work2-tag p, .work3-tag p, .work4-tag p {
+        font-size: 0.8rem;
+    }
+
+    .work1-tag a, .work2-tag a, .work3-tag a, .work4-tag a {
+        font-size: 0.75rem;
+    }
+    
+    .modal {
+        padding: 20px 10px;
+    }
+
+    .modal-body {
+        padding: 30px 15px;
+    }
+    
+    .modal-body h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-meta {
+        font-size: 0.8rem;
+    }
+
+    .modal-description {
+        font-size: 0.85rem;
+    }
+    
+    .archive {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
+        aspect-ratio: auto;
+    }
+
+    .archive-item-1 {
+        grid-area: auto;
+    }
+
+    .archive-item-2 {
+        grid-area: auto;
+    }
+
+    .archive-item-3 {
+        grid-area: auto;
+    }
+
+    .archive-item-4 {
+        grid-area: auto;
+    }
+
+    .archive-item img {
+        height: auto;
+        min-height: 150px;
+    }
+    
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contact-section {
+        padding: 40px 20px;
+        min-height: auto;
+    }
+    
+    .contact-content h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-content p {
+        font-size: 0.95rem;
+        margin: 10px 0;
+    }
+
+    .contact-content {
+        gap: 15px;
+    }
+
+    .contact-image {
+        aspect-ratio: 1 / 1;
+    }
+
+    .nav-panel {
+        width: 150px;
+        padding: 15px;
+    }
+
+    .nav-item {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .nav-close {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .text {
+        font-size: 5rem;
+        -webkit-text-stroke-width: 0.5px;
+    }
+
+    .images {
+        padding-top: 80vh;
+        min-height: 80vh;
+    }
+
+    .bio-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .bio-section p {
+        font-size: 0.75rem;
+    }
+
+    .content-bottom {
+        padding: 30px 15px;
+    }
+
+    .projects-grid {
+        gap: 30px;
+    }
+
+    .project-item h3 {
+        font-size: 0.8rem;
+    }
+
+    .project-meta {
+        font-size: 0.65rem;
+    }
+
+    .project-description {
+        font-size: 0.7rem;
+    }
+
+    .selected-work-header h2 {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+    }
+
+    .work1-tag, .work2-tag, .work3-tag, .work4-tag {
+        padding: 6px 10px;
+    }
+
+    .work1-tag p, .work2-tag p, .work3-tag p, .work4-tag p {
+        font-size: 0.7rem;
+    }
+
+    .work1-tag a, .work2-tag a, .work3-tag a, .work4-tag a {
+        font-size: 0.65rem;
+    }
+
+    .contact-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-content p {
+        font-size: 0.85rem;
+    }
+
+    .nav-panel {
+        width: 140px;
+        padding: 12px;
+    }
+
+    .nav-item {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .nav-toggle {
+        width: 40px;
+        height: 40px;
+        top: 15px;
+        right: 15px;
+    }
+
+    .nav-lineone, .nav-linetwo {
+        width: 25px;
+        height: 5px;
+    }
+
+    .modal-body {
+        padding: 20px 12px;
+    }
+
+    .modal-body h2 {
+        font-size: 1.2rem;
+    }
+
+    .modal-meta {
+        font-size: 0.75rem;
+    }
+
+    .modal-description {
+        font-size: 0.8rem;
+    }
+
+    .archive {
+        gap: 8px;
+    }
+
+    .contact-section {
+        padding: 30px 15px;
+    }
+}
+
+.footer {
+    position: relative;
+    padding: 30px 15px;
+    text-align: center;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: Degular, semibold;
+    font-size: 0.875rem;
+    border-top: 1px solid rgba(225, 225, 242, 0.1);
+    z-index: 10;
+}
+
+.footer p {
+    margin: 0;
+    letter-spacing: 0.05em;
+}
