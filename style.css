@@ -602,6 +602,13 @@ img:nth-child(8) {
     display: block;
 }
 
+.modal-body iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 20px 0;
+}
+
 /* Contact Section */
 .contact-section {
     width: 100%;
@@ -793,6 +800,13 @@ img:nth-child(8) {
     .modal-description {
         font-size: 0.85rem;
     }
+
+    .modal-body iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 15px 0;
+    }
     
     .archive {
         grid-template-columns: repeat(2, 1fr);
@@ -964,6 +978,13 @@ img:nth-child(8) {
 
     .modal-description {
         font-size: 0.8rem;
+    }
+
+    .modal-body iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 15px 0;
     }
 
     .archive {
